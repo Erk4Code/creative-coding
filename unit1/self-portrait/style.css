@@ -1,0 +1,32 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+
+}
+.background{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    min-height: 100vh;
+    background-image: url(background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    filter: blur(5px);
+}
+.content{
+    color:#fff;
+    margin-top:200px;
+    text-align: center;
+}
+.content h1{
+    font-size: 95px;
+    margin-bottom: 10px;
+}
+.content p{
+    font-size: 35px;
+
+}
