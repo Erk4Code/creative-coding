@@ -17,7 +17,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    background-color: rgb(36, 39, 48);
     z-index: -1;
     filter: blur(8px);
     -webkit-filter: blur(8px);
@@ -56,7 +55,6 @@
   .gallery .desc{
     padding: 10px;
     text-align:center;
-    color:aquamarine;
   }
 
   .gallery:hover{
