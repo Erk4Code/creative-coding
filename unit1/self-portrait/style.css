@@ -73,6 +73,11 @@ https://www.sliderrevolution.com/resources/css-text-animation/
   Has all the pictures of the gundams used and in what position they are in.
   The left most gundam is the first serise I saw and then progresses going right.
   */
+
+  /*
+  Barbatos is in Iron Blooded Orphans it is a side story in the gundam universe taking place in a 
+  seperate universe. It is a good way to first get started and get used to gundam.
+  */
 .barbatos{
   background-image: url(https://i.pinimg.com/originals/a9/fb/6f/a9fb6f45630b297212106c92502db7bd.jpg);
   background-size: cover;
@@ -85,6 +90,10 @@ https://www.sliderrevolution.com/resources/css-text-animation/
   top:1%;
   left:1%;
 }
+
+/*
+Aerial is from another side story and is the most recent gundam release
+*/
 .aerial{
   background-image: url(https://preview.redd.it/aerial-gundam-v0-brtgpmlsme6b1.jpg?width=640&crop=smart&auto=webp&s=77fc7918b142ae759c002492ffca875df6a14b7e);
   background-size: cover;
@@ -99,6 +108,10 @@ https://www.sliderrevolution.com/resources/css-text-animation/
   background-position-x: 90%;
 }
 
+/*
+RX-78 is from the original 80s Mobile Suit Gundam Anime and the very first gundam to be show cased taking place
+in the Universal Century Timeline.
+*/
 .rx-78{
   background-image: url(https://i.pinimg.com/564x/af/f3/be/aff3be5aa71285cb43d574b38fd5079b.jpg);
   background-size: cover;
@@ -109,8 +122,43 @@ https://www.sliderrevolution.com/resources/css-text-animation/
   position: absolute;
   z-index: 1;
   top:1%;
-  left: 28%;
+  left: 36%;
+}
 
+/*
+Zeta Gundam is the second gundam taking place in the mobile suit gundam anime.
+UC timeline.
+*/
+.zeta{
+  background-image: url(https://blog.alltheanime.com/wp-content/uploads/2016/11/e3ecd2f8d9deacbe047124a593cfc95a1354921179_full.jpg);
+  background-size: cover;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top:1%;
+  left:68%;
+  
+}
+
+/*
+Stardust Memory is a optional sequal that takes place right after Zeta and goes a little more indepth with
+the different subfactions that emerage after the one year war.
+The Gundam in the serise is named Gundam GP01 "Zephyranthes"
+*/
+.zephyranthes{
+  background-image: url(https://hoganreviews.co.uk/wp-content/uploads/2019/08/gundam-0083-stardust-memory-3.jpg?w=560&h=390);
+  background-size: cover;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top:1%;
+  left:88%;  
 }
 
 h2 {
