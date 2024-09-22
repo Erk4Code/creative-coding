@@ -7,13 +7,18 @@
     font-family: sans-serif;
 
 }
+
+/*
+I used code academy for adding a blur effect on the background
+https://www.codecademy.com/resources/docs/css/filter-functions/blur
+*/
 .background{
     position: absolute;
     top:0;
     left:0;
     width:100%;
     min-height: 100vh;
-    background-image: url(background.jpg);
+    background-image: url(background.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -21,6 +26,10 @@
     filter: blur(8px);
     -webkit-filter: blur(8px);
 }
+/*
+Title code was developed by Hakkam Abdullah I changed his example with my in game name
+https://www.sliderrevolution.com/resources/css-text-animation/
+*/
 .title {
     font-family: "Cairo";
     text-align: center;
@@ -43,25 +52,4 @@
     text-transform: uppercase;
     font-size: 120px;
     margin: 10px 0;
-  }
-
-  .gallery{
-    display: inline-block;
-    border: 1px solid hsl(0,0%,60%);
-    margin: 5px;
-    width: 700px;
-  }
-
-  .gallery .desc{
-    padding: 10px;
-    text-align:center;
-  }
-
-  .gallery:hover{
-    border: 1px solid hsl(0,0%,20%);
-  }
-
-  .gallery img{
-    width: 100%;
-    height: auto;
   }
