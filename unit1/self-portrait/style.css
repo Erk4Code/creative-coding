@@ -44,7 +44,8 @@ https://www.sliderrevolution.com/resources/css-text-animation/
     justify-content: center;
     height: 100vh;
     letter-spacing: 1px;
-    line-height:2
+    line-height:2;
+    z-index: 3;
   }
   
   h1 {
@@ -59,17 +60,33 @@ https://www.sliderrevolution.com/resources/css-text-animation/
   }
 
 .barbatos{
-  background-image: url(barbatos.jpg);
+  background-image: url(https://i.pinimg.com/originals/a9/fb/6f/a9fb6f45630b297212106c92502db7bd.jpg);
   background-size: cover;
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
   display: block;
   position: absolute;
-  z-index: 2;
-  top:50%;
-  left:50%;
-  transform: translate(-50%,-50%);
-  display:block;
+  z-index: 1;
+  top:1%;
+  left:1%;
+}
+.aerial{
+  background-image: url(https://preview.redd.it/aerial-gundam-v0-brtgpmlsme6b1.jpg?width=640&crop=smart&auto=webp&s=77fc7918b142ae759c002492ffca875df6a14b7e);
+  background-size: cover;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top:1%;
+  left:24%;
+  background-position-x: 90%;
+}
 
+
+h2 {
+  color: black;
+  font-size: 40px;    
 }
