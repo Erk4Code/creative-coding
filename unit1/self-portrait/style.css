@@ -7,24 +7,28 @@
     font-family: sans-serif;
 
 }
+.parent{
+  position: relative;
+  height: 100%;
 
+}
 /*
 I used code academy for adding a blur effect on the background
 https://www.codecademy.com/resources/docs/css/filter-functions/blur
+lowered the blur a bit
 */
 .background{
-    position: absolute;
+  background-image: url(background.png);
+    position: fixed;
     top:0;
     left:0;
     width:100%;
     min-height: 100vh;
-    background-image: url(background.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     z-index: -1;
-    filter: blur(8px);
-    -webkit-filter: blur(8px);
+    filter: blur(5px);
 }
 /*
 Title code was developed by Hakkam Abdullah I changed his example with my in game name
@@ -53,3 +57,19 @@ https://www.sliderrevolution.com/resources/css-text-animation/
     font-size: 120px;
     margin: 10px 0;
   }
+
+.barbatos{
+  background-image: url(barbatos.jpg);
+  background-size: cover;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  z-index: 2;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  display:block;
+
+}
