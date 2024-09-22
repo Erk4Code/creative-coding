@@ -5,8 +5,14 @@
     padding:0px;
     box-sizing: border-box;
     font-family: sans-serif;
-
 }
+
+/*
+Used a nesting code to put my images on top of the background and be able to change their relative
+positioning
+https://stackoverflow.com/questions/43247837/display-image-on-top-of-blurred-background-image
+
+*/
 .parent{
   position: relative;
   height: 100%;
@@ -16,6 +22,10 @@
 I used code academy for adding a blur effect on the background
 https://www.codecademy.com/resources/docs/css/filter-functions/blur
 lowered the blur a bit
+
+The background was found from this website
+https://browsecat.art/other/nu-gundam-wallpapers
+
 */
 .background{
   background-image: url(background.png);
@@ -59,6 +69,10 @@ https://www.sliderrevolution.com/resources/css-text-animation/
     margin: 10px 0;
   }
 
+  /*
+  Has all the pictures of the gundams used and in what position they are in.
+  The left most gundam is the first serise I saw and then progresses going right.
+  */
 .barbatos{
   background-image: url(https://i.pinimg.com/originals/a9/fb/6f/a9fb6f45630b297212106c92502db7bd.jpg);
   background-size: cover;
@@ -81,10 +95,23 @@ https://www.sliderrevolution.com/resources/css-text-animation/
   position: absolute;
   z-index: 1;
   top:1%;
-  left:24%;
+  left:18%;
   background-position-x: 90%;
 }
 
+.rx-78{
+  background-image: url(rx\ 78.jpg);
+  background-size: cover;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top:1%;
+  left: 28;
+
+}
 
 h2 {
   color: black;
