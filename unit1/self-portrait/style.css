@@ -87,8 +87,6 @@ https://www.sliderrevolution.com/resources/css-text-animation/
   display: block;
   position: absolute;
   z-index: 1;
-  top:1%;
-  left:1%;
 }
 
 /*
@@ -103,8 +101,7 @@ Aerial is from another side story and is the most recent gundam release
   display: block;
   position: absolute;
   z-index: 1;
-  top:1%;
-  left:18%;
+  left:15%;
   background-position-x: 90%;
 }
 
@@ -121,8 +118,7 @@ in the Universal Century Timeline.
   display: block;
   position: absolute;
   z-index: 1;
-  top:1%;
-  left: 36%;
+  left: 25%;
 }
 
 /*
@@ -138,8 +134,7 @@ UC timeline.
   display: block;
   position: absolute;
   z-index: 1;
-  top:1%;
-  left:55%;
+  left:35%;
   background-position-x: 90%;  
 }
 
@@ -157,8 +152,7 @@ The Gundam in the serise is named Gundam GP01 "Zephyranthes"
   display: block;
   position: absolute;
   z-index: 1;
-  top:1%;
-  left:68%;  
+  left:45%;  
 }
 
 h2 {
