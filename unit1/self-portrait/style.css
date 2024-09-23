@@ -68,6 +68,15 @@ img{
   font-size: 35px;
   font-weight: bold;
 }
+.centered1{
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+}
 
 /*
 Title code was developed by Hakkam Abdullah I changed his example with my in game name
@@ -97,31 +106,10 @@ https://www.sliderrevolution.com/resources/css-text-animation/
     font-size: 120px;
     margin: 10px 0;
   }
-
-
-
   /*
   Has all the pictures of the gundams used and in what position they are in.
   The left most gundam is the first serise I saw and then progresses going right.
   */
-
-
-/*
-Stardust Memory is a optional sequal that takes place right after Zeta and goes a little more indepth with
-the different subfactions that emerage after the one year war.
-The Gundam in the serise is named Gundam GP01 "Zephyranthes"
-*/
-.zephyranthes{
-  background-image: url(https://hoganreviews.co.uk/wp-content/uploads/2019/08/gundam-0083-stardust-memory-3.jpg?w=560&h=390);
-  background-size: cover;
-  width: 200px;
-  height: 200px;
-  border-radius: 10px;
-  display: block;
-  position: absolute;
-  z-index: 1;
-  left:51%;  
-}
 
 h2 {
   color: black;
