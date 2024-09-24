@@ -84,6 +84,8 @@ img{
   position: absolute;
   bottom: 8px;
   left: 16px;
+  color: white;
+  background-color: rgb(0, 0, 0);
 }
 /* Bottom right text for number of episodes */
 .bottom-right {
