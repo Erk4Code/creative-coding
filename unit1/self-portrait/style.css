@@ -82,8 +82,8 @@ img{
 /* Bottom left text for watch order*/
 .bottom-left {
   position: absolute;
-  bottom: 8px;
-  left: 16px;
+  bottom: 10px;
+  left: 0%;
   color: white;
   background-color: rgb(0, 0, 0);
 }
