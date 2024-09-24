@@ -83,7 +83,7 @@ img{
 .bottom-left {
   position: absolute;
   bottom: 15px;
-  left: 26%;
+  left: 30%;
   color: white;
   background-color: rgb(0, 0, 0);
   font-size: 15px;
@@ -127,12 +127,11 @@ https://www.sliderrevolution.com/resources/css-text-animation/
     font-size: 120px;
     margin: 10px 0;
   }
-  /*
-  Has all the pictures of the gundams used and in what position they are in.
-  The left most gundam is the first serise I saw and then progresses going right.
-  */
 
 h2 {
   color: black;
-  font-size: 40px;    
+  font-size: 80px;
+  text-align: center;
+  text-decoration: underline;
+  font-weight: bold;    
 }
