@@ -1,9 +1,19 @@
+//I decided to go with a flower idea but could not come up with anything during research instead I went with an easy mountain solution towards my project
+//I wanted to create something that was minimalist design and could convey a unique theme. This is what I came up with
+
 let yoff = 0.0; // y global variable to create the difference in layers for mountains
 let r; //random rgb colors for sky global variable
 let g;
 let b;
+let black, colorMain; // colors for gradiant and main color scheme
 
-let black, colorMain;
+//global variable for stars
+let stars = 200; //number of stars
+let minStar = 0.5; //smallest star size
+let maxStar = 2; //biggest star size
+let minOpa = 50; //min transparency
+let maxOpa = 200; //max transparency
+
 function setup() {
   createCanvas(1000, 800);
   noLoop(); // Only draw once for a static mountain
@@ -13,8 +23,9 @@ function setup() {
   //put inside the setup function so it does not randomize the colors everytime but on refresh
 
   black = color(0);
-  colorMain = color(r,g,b);
+  colorMain = color(r,g,b); // main color to mainuplate
 
+  //adding gradiant to the sky
   for(let y = 0; y<height; y++){
     n = map(y,0,height,0,1);
     let newColor = lerpColor(black, colorMain, n);
@@ -32,6 +43,25 @@ function setup() {
 
 
 function draw() {
+  //drawing stars in the night sky
+  for(let i = 0; i < stars; i++){
+    let randomSize = random(minStar, maxStar); 
+    let randomX = random(width);
+    let randomY = random(height);
+    noStroke();
+    ellipse(randomX, randomY, randomSize,randomSize);
+
+  }
+  // added in the sun but the blendMode effect created the normal mountains into something etheral looking so I kept it for the uniqueness.
+  blendMode(ADD);
+  dawn = color(248,131,121);
+  let dawnNew = lerpColor(colorMain, dawn, 0.33);
+  fill(dawnNew);
+  noStroke();
+  ellipse(width /1.2, height /3.5, 100);
+
+  fill(colorMain);
+  ellipse(width /5, height /3, 83);
 
 // loop for multi layered mountain
 // uses a nested for loop for one creating a layer and drawing a mountain shape in that layer
