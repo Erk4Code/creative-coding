@@ -1,18 +1,19 @@
-function preload(){
-  // load the image from a file
-	img = loadImage();
-}
-
 function setup() {
-
   // create the canvas
-  createCanvas(800, 800);
+  createCanvas(1000, 800);
+
+  r = random(255);
+  g = random(100,200);
+  b = random(200,255);
   
+  
+
+  background(r,g,b);
 }
 
 function draw() {
-  background(220);
+  
 
   // render the image
-  image(img,10,10,100,100);
+  
 }
