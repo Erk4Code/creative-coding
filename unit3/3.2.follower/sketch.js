@@ -26,7 +26,7 @@ function setup() {
 
 function draw() {
   background(220);
-  image(img, 0,0);
+  image(img, x-30,y-30, 60 ,60);
   // distance formula
   d = sqrt((x - mouseX)**2 + (y - mouseY)**2);
 
@@ -35,7 +35,7 @@ function draw() {
   y += speedy;
 
   //draw circle
-  circle(x,y,50);
+  //circle(x,y,50);
 
   //draw goal
   rect(goalx, goaly, goalSize,goalSize);
