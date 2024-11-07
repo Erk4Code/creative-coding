@@ -3,14 +3,17 @@ let x = 0;
 let y = 0;
 let d = 0;
 let score = 0;
-let speedfactor = 7;
+let speedfactor = 5;
 let speedx = speedfactor;
 let speedy = speedfactor;
 let goalx = 0;
 let goaly = 0;
 let goalSize = 30;
-
-
+let img;
+//add a sprite
+function preload(){
+  img = loadImage("cannon.png");
+}
 
 function setup() {
   createCanvas(800, 800);
@@ -23,6 +26,7 @@ function setup() {
 
 function draw() {
   background(220);
+  image(img, 0,0);
   // distance formula
   d = sqrt((x - mouseX)**2 + (y - mouseY)**2);
 
