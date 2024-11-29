@@ -5,7 +5,7 @@
 // I tried imeplementing a sound visualizer but loadSound was bugging so I went with this idea
 
 var points = []
-var mult = 0.005
+var mult = 0.003 // higher value = more recurssion you see lower the value for more unique results
 
 
 function preload(){
@@ -14,11 +14,14 @@ function preload(){
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(0);
-  var density = 100 // number of points in each row. Changed up the density
+  angleMode(DEGREES)
+  noiseDetail(1); // adjustment to noise  https://p5js.org/reference/p5/noiseDetail/
+
+  var density = 40 // number of points in each row. Changed up the density
   var space = width / density // space between each point
   for(var x = 0; x < width; x += space){
     for(var y = 0; y < height; y+= space){
-      var p = createVector(x,y)
+      var p = createVector(x + random(-10,10), y + random(-10,10)) // added random points to x and y so there is no a grid like pattern when first being formed makes it look more natural
       points.push(p) //add each vector inside the points array
       
     }
