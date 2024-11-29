@@ -17,9 +17,10 @@ class Flow{
       b2: random(255)
     };
     this.initFlow();
+    this.finished = false; // to generate a new flow
   }
   initFlow(){ // intializes all the vectors
-    var density = 60 // number of points in each row. Changed up the density
+    var density = 80 // number of points in each row. Changed up the density
     var space = width / density // space between each point
     for(var x = 0; x < width; x += space){
       for(var y = 0; y < height; y+= space){
@@ -35,11 +36,12 @@ class Flow{
   createFlow(){ // draws out the flow canvas
     noStroke()
 
-    if(frameCount * 8 <= this.points.length){ // controls the generation of the lines being drawn change multi of frameCount to control speed
-      var max = frameCount * 8
+    if(frameCount * 10 <= this.points.length){ // controls the generation of the lines being drawn change multi of frameCount to control speed
+      var max = frameCount * 10
 
     }else{
       var max = this.points.length
+      this.finished = true; // all points are created
     }
 
     for(var i = 0; i < max; i++){
@@ -80,6 +82,13 @@ function setup() {
 
 
 function draw() {
-  flow.createFlow();
+  if(!flow.finished){
+    flow.createFlow();
+    
+  }else{
+    background(0);
+    flow = new Flow();
+    frameCount = 0;
+  }
 }
 
