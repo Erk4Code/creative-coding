@@ -5,7 +5,7 @@
 // I tried imeplementing a sound visualizer but loadSound was bugging so I went with this idea
 
 var points = []
-var mult = 0.002 // higher value = more recurssion you see lower the value for more unique results
+var mult = 0.003 // higher value = more recurssion you see lower the value for more unique results
 
 
 function preload(){
@@ -17,7 +17,7 @@ function setup() {
   angleMode(DEGREES)
   noiseDetail(1); // adjustment to noise  https://p5js.org/reference/p5/noiseDetail/
 
-  var density = 40 // number of points in each row. Changed up the density
+  var density = 60 // number of points in each row. Changed up the density
   var space = width / density // space between each point
   for(var x = 0; x < width; x += space){
     for(var y = 0; y < height; y+= space){
@@ -37,14 +37,19 @@ function draw() {
     var r = map(points[i].x, 0, width, 50, 255)
     var g = map(points[i].y, 0, height, 50, 255)
     var b = map(points[i].x, 0, width, 255, 50)
-    
-    fill(r,g,b)
+    var alpha = map(dist(width / 2, height / 2, points[i].x, points[i].y), 0, 400, 400, 0) // alpha variable to create a further blend with background
 
+    fill(r,g,b, alpha)
+    
     var angle = map(noise(points[i].x * mult, points[i].y * mult), 0, 1, 0, 720) // angle in how every point will move utalizes noise so the points will move naturally. 
 
     points[i].add(createVector(cos(angle), sin(angle))) //adding a vector to each point
 
-    ellipse(points[i].x, points[i].y, 1) //creating a circle at the x and y corrdinate of every point. third parameter is to change the size of circle
+    if(dist(width / 2, height / 2, points[i].x, points[i].y) < 400){
+      ellipse(points[i].x, points[i].y, 1) //creating a circle at the x and y corrdinate of every point. third parameter is to change the size of circle
+    }
+    
+    
   }
 }
 
