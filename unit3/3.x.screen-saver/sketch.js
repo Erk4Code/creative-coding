@@ -4,11 +4,11 @@
 
 // I will try to change some implementations that are from the video so I also have my own implementations and not just copied over the code
 
-//audio used from nocopyrightsounds
+//audio used from nocopyrightsounds TULE, Chris Linton - Fearless pt. II (feat. Chris Linton) [NCS Release]
 var song
 
 function preload(){
-  song = loadSound('TULE, Chris Linton - Fearless pt. II (feat. Chris Linton) [NCS Release].mp3')
+  song = loadSound('music.mp3')
 }
 
 function setup() {
