@@ -7,7 +7,6 @@
 var points = []
 var mult = 0.003 // higher value = more recurssion you see lower the value for more unique results
 
-
 var r1
 var r2
 var g1
@@ -36,6 +35,7 @@ function setup() {
     }
   }
   
+  shuffle(points, true)
   // adding randomess to color
   r1 = random(255)
   r2 = random(255)
@@ -51,7 +51,15 @@ function setup() {
 
 function draw() {
   noStroke()
-  for(var i = 0; i < points.length; i++){
+
+  if(frameCount * 2 <= points.length){ // controls the generation of the lines being drawn
+    var max = frameCount * 2
+
+  }else{
+    var max = points.length
+  }
+
+  for(var i = 0; i < max; i++){
 
     //mapping coordinates of points to the rgb values
     var r = map(points[i].x, 0, width, r1, r2)
