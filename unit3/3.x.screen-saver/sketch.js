@@ -44,7 +44,7 @@ function setup() {
   b1 = random(255)
   b2 = random(255)
 
-  mult = random(0.002, 0.01)
+  mult = random(0.002, 0.005)
 
 }
 
@@ -52,8 +52,8 @@ function setup() {
 function draw() {
   noStroke()
 
-  if(frameCount * 2 <= points.length){ // controls the generation of the lines being drawn
-    var max = frameCount * 2
+  if(frameCount * 8 <= points.length){ // controls the generation of the lines being drawn change multi of frameCount to control speed
+    var max = frameCount * 8
 
   }else{
     var max = points.length
