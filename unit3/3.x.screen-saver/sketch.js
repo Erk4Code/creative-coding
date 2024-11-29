@@ -5,7 +5,7 @@
 // I tried imeplementing a sound visualizer but loadSound was bugging so I went with this idea
 
 var points = []
-var mult = 0.003 // higher value = more recurssion you see lower the value for more unique results
+var mult = 0.002 // higher value = more recurssion you see lower the value for more unique results
 
 
 function preload(){
@@ -30,8 +30,16 @@ function setup() {
 
 function draw() {
   noStroke()
-  fill(255)
   for(var i = 0; i < points.length; i++){
+
+    //mapping coordinates of points to the rgb values
+    //left side has cooler tone colors while right side has warmer tones
+    var r = map(points[i].x, 0, width, 50, 255)
+    var g = map(points[i].y, 0, height, 50, 255)
+    var b = map(points[i].x, 0, width, 255, 50)
+    
+    fill(r,g,b)
+
     var angle = map(noise(points[i].x * mult, points[i].y * mult), 0, 1, 0, 720) // angle in how every point will move utalizes noise so the points will move naturally. 
 
     points[i].add(createVector(cos(angle), sin(angle))) //adding a vector to each point
