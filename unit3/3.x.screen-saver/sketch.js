@@ -8,8 +8,17 @@ var points = []
 var mult = 0.003 // higher value = more recurssion you see lower the value for more unique results
 
 
+var r1
+var r2
+var g1
+var g2
+var b1
+var b2
+
+
 function preload(){
 }
+
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -26,17 +35,28 @@ function setup() {
       
     }
   }
+  
+  // adding randomess to color
+  r1 = random(255)
+  r2 = random(255)
+  g1 = random(255)
+  g2 = random(255)
+  b1 = random(255)
+  b2 = random(255)
+
+  mult = random(0.002, 0.01)
+
 }
+
 
 function draw() {
   noStroke()
   for(var i = 0; i < points.length; i++){
 
     //mapping coordinates of points to the rgb values
-    //left side has cooler tone colors while right side has warmer tones
-    var r = map(points[i].x, 0, width, 50, 255)
-    var g = map(points[i].y, 0, height, 50, 255)
-    var b = map(points[i].x, 0, width, 255, 50)
+    var r = map(points[i].x, 0, width, r1, r2)
+    var g = map(points[i].y, 0, height, g1, g2)
+    var b = map(points[i].x, 0, width, b1, b2)
     var alpha = map(dist(width / 2, height / 2, points[i].x, points[i].y), 0, 400, 400, 0) // alpha variable to create a further blend with background
 
     fill(r,g,b, alpha)
