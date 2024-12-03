@@ -11,6 +11,9 @@ are permitted in any medium without royalty provided the copyright
 notice and this notice are preserved. This file is offered as-is,
 without any warranty.
 -->
+<!--
+I edited this code to represent the failures teammates can do to someone in rocket league
+-->
 <style type="text/css">
 /* <![CDATA[ */
 body {
@@ -28,7 +31,7 @@ a {
 </style>
 <script type="text/javascript">
 var t = 0;
-var absurd_situation = ["sitting on the toilet", "being strip-searched in the airport", "failing to hail a cab", "renting formal clothes", "stepping over a street pizza", "double-parking", "entering a convenience store", "watching happy-slapping videos online", "selecting produce", "burning trash", "buying lottery tickets"];
+var player_situation = ["dribbling the ball", "clearing the ball on defense", "taking a fifty", "challenging early", "passing towards mid", "going for a flip reset", "going for a ceiling shot", "waiting on the backboard"];
 var sad_descriptor = ["a jobless", "a forlorn", "a clumsy", "an antisocial", "a fretful", "a hirsute", "an unstylish", "a cockeyed", "an overly trusting", "an almost illiterate", "a big-boned"];
 var nationality = ["Scottish", "Thai", "Romani", "Icelandic", "Belizian", "Belgian", "Welsh", "Salvadoran", "Canadian", "Turkish", "Armenian", "Micronesian"];
 var man_or_woman = ["man", "woman", "teenager", "senior citizen"];
@@ -55,7 +58,7 @@ function story() {
     }
     last = document.createElement('div');
     last.appendChild(document.createElement('br'));
-    lede = "While " + fresh(absurd_situation) + ", " + fresh(sad_descriptor) + " " + fresh(nationality) + " " + fresh(man_or_woman) + " had an idea: Why not dress as " + fresh(silly_character) + " and " + fresh(interact_with) + " people?";
+    lede = "While you are " + fresh(player_situation) + ", " + fresh(sad_descriptor) + " " + fresh(nationality) + " " + fresh(man_or_woman) + " had an idea: Why not dress as " + fresh(silly_character) + " and " + fresh(interact_with) + " people?";
     last.appendChild(document.createTextNode(lede));
     main.appendChild(last);
 }
