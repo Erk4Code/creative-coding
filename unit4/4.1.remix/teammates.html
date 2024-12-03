@@ -12,7 +12,7 @@ notice and this notice are preserved. This file is offered as-is,
 without any warranty.
 -->
 <!--
-I edited this code to represent the failures teammates can do to someone in rocket league
+I edited this code to represent the failures teammates can do to someone in rocket league - Eric Bae
 -->
 <style type="text/css">
 /* <![CDATA[ */
@@ -31,14 +31,14 @@ a {
 </style>
 <script type="text/javascript">
 var t = 0;
-var player_situation = ["dribbling the ball", "clearing the ball on defense", "taking a fifty", "challenging early", "passing towards mid", "going for a flip reset", "going for a ceiling shot", "waiting on the backboard"];
-var sad_descriptor = ["a jobless", "a forlorn", "a clumsy", "an antisocial", "a fretful", "a hirsute", "an unstylish", "a cockeyed", "an overly trusting", "an almost illiterate", "a big-boned"];
-var nationality = ["Scottish", "Thai", "Romani", "Icelandic", "Belizian", "Belgian", "Welsh", "Salvadoran", "Canadian", "Turkish", "Armenian", "Micronesian"];
-var man_or_woman = ["man", "woman", "teenager", "senior citizen"];
-var silly_character = ["a giraffe", "a robot", "a carnivorous plant", "a Deadhead", "a ninja", "Professor Snape", "a turnip", "a skyscraper", "Benjamin Franklin", "a microbe", "a pirate king"];
+var player_situation = ["dribbling the ball", "clearing the ball on defense", "taking a fifty", "challenging early", "passing towards mid", "going for a flip reset", "going for a ceiling shot", "waiting on the backboard", "going for a shot"]; //while you are 
+var mate_descriptor = ["ballchasing", "room temperature iq", "zero brain", "big ego", "toxic", "unaware", "boosted"];
+var nationality = ["US-East", "US-West", "US-Central", "Europe", "Asia SE-Mainland", "Asia SE-Maritime", "Middle East", "Asia East", "Oceania", "South Africa","South America", "India"];
+var client = ["Epic", "Steam"];
+var pro_player = [""];
 var interact_with = ["do good deeds for", "interrogate", "evangelize", "wink at", "dance for", "serenade", "vigorously encourage", "wave to", "pray with", "handle snakes with", "soothe", "laugh at", "imitate"];
 function rand_range(max) {
-    "use strict";
+    "use strict"
     return Math.floor(Math.random() * (max + 1));
 }
 function fresh(array) {
@@ -58,7 +58,7 @@ function story() {
     }
     last = document.createElement('div');
     last.appendChild(document.createElement('br'));
-    lede = "While you are " + fresh(player_situation) + ", " + fresh(sad_descriptor) + " " + fresh(nationality) + " " + fresh(man_or_woman) + " had an idea: Why not dress as " + fresh(silly_character) + " and " + fresh(interact_with) + " people?";
+    lede = "While you are " + fresh(player_situation) + ", your " + fresh(mate_descriptor) + " teammate from " + fresh(nationality) + " that is a " + fresh(client) + " player had an idea: Why not play like " + fresh(silly_character) + " and " + fresh(interact_with) + " people?";
     last.appendChild(document.createTextNode(lede));
     main.appendChild(last);
 }
