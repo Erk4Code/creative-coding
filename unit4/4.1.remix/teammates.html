@@ -13,6 +13,9 @@ without any warranty.
 -->
 <!--
 I edited this code to represent the failures teammates can do to someone in rocket league - Eric Bae
+The source code is from Nick Montfort
+https://nickm.com/poems/lede.html
+
 -->
 <style type="text/css">
 /* <![CDATA[ */
@@ -35,8 +38,8 @@ var player_situation = ["dribbling the ball", "clearing the ball on defense", "t
 var mate_descriptor = ["ballchasing", "room temperature iq", "zero brain", "big ego", "toxic", "unaware", "boosted"];
 var nationality = ["US-East", "US-West", "US-Central", "Europe", "Asia SE-Mainland", "Asia SE-Maritime", "Middle East", "Asia East", "Oceania", "South Africa","South America", "India"];
 var client = ["Epic", "Steam"];
-var pro_player = ["Zen", "Squishy", ""];
-var interact_with = ["do good deeds for", "interrogate", "evangelize", "wink at", "dance for", "serenade", "vigorously encourage", "wave to", "pray with", "handle snakes with", "soothe", "laugh at", "imitate"];
+var pro_player = ["Zen", "Squishy", "Turbopulsa", "Itachi", "ApparentlyJack","BeastMode", "Daniel","Seikoo", "FirstKiller", "M0nkey M00n", "jstn", "CHEESE","Kronovi"];
+var player_distrub = ["take the ball from", "end up bumping", "ballchase for", "cover no space on defense from", "steal boost from", "rage quit and leave", "say toxic things on chat to"];
 function rand_range(max) {
     "use strict"
     return Math.floor(Math.random() * (max + 1));
@@ -58,7 +61,7 @@ function story() {
     }
     last = document.createElement('div');
     last.appendChild(document.createElement('br'));
-    lede = "While you are " + fresh(player_situation) + ", your " + fresh(mate_descriptor) + " teammate from " + fresh(nationality) + " that is a " + fresh(client) + " player had an idea: Why not play like " + fresh(pro_player) + " and " + fresh(interact_with) + " people?";
+    lede = "While you are " + fresh(player_situation) + ", your " + fresh(mate_descriptor) + " teammate from " + fresh(nationality) + " that is a " + fresh(client) + " player had an idea: Why not play like " + fresh(pro_player) + " and " + fresh(player_distrub) + " you, losing the match?";
     last.appendChild(document.createTextNode(lede));
     main.appendChild(last);
 }
@@ -71,7 +74,7 @@ function produce_stories() {
 </head>
 <body onload="produce_stories();">
 <div style="float:right; background:#999; margin-left:6px; border-left:thin #000 solid; border-bottom:thin #000 solid; padding:6px">
-<div><br>Lede<br />Based on a <a href="http://www.newser.com/story/157857/scotlands-new-hero-is-man-in-giraffe-suit.html">True Story</a><br /><a href="http://nickm.com">Nick Montfort</a></div>
+<div><br>Bad Teammates<br />Based on <a href="https://www.rocketleague.com/en">Rocket League</a><br /></div>
 </div>
 <div id="main"></div>
 </body>
