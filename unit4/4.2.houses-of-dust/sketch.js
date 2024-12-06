@@ -1,66 +1,55 @@
 let quatrain = '';
-// my idea for house of dust is 
+// my idea to replace a house of dust is to describe possible alien races that could exist in outer space.
 let grammar = tracery.createGrammar({
-  "material":[
-    "sand",
-    "plastic",
-    "leaves",
-    "warframe",
-    "glass",
-    "wood",
-    "roots",
-    "mud",
-    "dust",
-    "broken dishes",
-    "brick",
-    "stone",
-    "weeds",
-    "straw"
+  "material":[ // alien species type
+    "aquatic",
+    "robotic",
+    "hive",
+    "intellegent",
+    "war driven",
+    "democratic",
+    "advanced",
+    "fourth dimentional"
   ],
-  "place":[
-    "By a river",
-    "Inside a mountain",
-    "Among small hills",
-    "In a deserted airport",
-    "On the sea",
-    "In a metropolis",
-    "In a cold, windy climate",
-    "In dense woods",
-    "On open ground",
-    "In a green, mossy terrain",
-    "In a deserted factory",
-    "In a overpopulated area",
-    "On a island",
-    "In southern France",
-    "By an abandoned lake",
-    "In a desert",
-    "In Japan",
-    "In a hot climate"
+  "place":[ // living near what kind of star or event
+    "Living near a black hole",
+    "Caught in a super nova",
+    "Has multiple moons",
+    "Developed a dyson sphere",
+    "Conqured five galaxies",
+    "Is in a transcendant plane",
+    "Located near a white dwarf",
+    "Edge of the universe",
+    "Peacefuly inside a nebula",
+    "Travels with starships",
+    "Traveled from another timeline",
+    "Have not developed technology",
+    "Eats other worlds",
   ],
-  "light_source":[
-    "natural light",
-    "all available lighting",
-    "electricity",
-    "candles",
-    "lamps",
+  "light_source":[ // the age of the civ
+    "ancient",
+    "modern",
+    "aeon",
+    "old",
+    "young",
+    "new",
+    "forgotten",
   ],
-  "inhabitants":[
-    "French and German speaking people",
-    "people who eat a great deal",
-    "people who love to read",
-    "children and old people",
-    "little boys",
-    "horses and birds",
-    "people from many walks of life",
-    "various birds and fish",
-    "friends",
-    "vegetarians",
-    "fishermen and families",
-    "people who sleep almost all the time",
-    "lovers",
-    "collectors of all types",
+  "inhabitants":[ // how they faired in the end
+    "had a civil war and are now lost and scattered",
+    "had their entire race merged and became one divine entity",
+    "put their consciousness into a rouge Ai",
+    "got sent to another parallel universe after a accident",
+    "went into galactic bankruptcy",
+    "stuck in a time loop",
+    "used up all their natural resources",
+    "ended up chillin",
+    "died out to an unknown disease",
+    "gene pool ran out",
+    "became too self aware",
+    "broke the light barrier and disappeared"
   ],
-  "origin": "A house of #material#\n#place#\nUsing #light_source#\nInhabited by #inhabitants"
+  "origin": "A civilization that is #material#\n#place#\nIs a fairly #light_source# race\nThey #inhabitants"
 })
 quatrain = grammar.flatten("#origin#");
 
@@ -78,7 +67,7 @@ function setup() {
 
 function draw() {
   background(220);
-  textSize(50);
+  textSize(40);
 
   let y = 100;
   for(let i=0; i< num.length; i++){
