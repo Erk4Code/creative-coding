@@ -1,5 +1,5 @@
 let quatrain = '';
-
+// my idea for house of dust is 
 let grammar = tracery.createGrammar({
   "material":[
     "sand",
@@ -64,15 +64,25 @@ let grammar = tracery.createGrammar({
 })
 quatrain = grammar.flatten("#origin#");
 
+let num = [];// store the quatrain
 
 function setup() {
-  createCanvas(800, 800);
+  createCanvas(800, 1600);
   noLoop();
+  let x = 5; //number of quatrain
+  for(let i = 0; i < x; i++){
+    num.push(grammar.flatten("#origin#"));
+  }
 }
 
 
 function draw() {
   background(220);
-  textSize(40);
-  text(quatrain, 50,50); 
+  textSize(50);
+
+  let y = 100;
+  for(let i=0; i< num.length; i++){
+    text(num[i], 50,y);
+    y = y+300;
+  }
 }
