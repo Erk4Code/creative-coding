@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+  <title>Ultimate Student Habits, by Eric Bae</title>
+
+    	<!-- Safety, Copyright 2019 Nick Montfort <nickm@nickm.com>
+
+    Copying and distribution of this file, with or without modification, are
+    permitted in any medium without royalty provided the copyright notice and
+    this notice are preserved. This file is offered as-is, without any warranty.
+
+    I Eric Bae edited this code to make a funny interpretation of daily student life original work is
+    https://nickm.com/poems/safety.html
+
+    -->
+
+    	<script>
+      const title = [
+        ['Daily Routine: '],
+        ['Ready ', 'Hot ', 'Cold ', 'Do ', ' '],
+        ['Everything ', 'Shower ','Workout ','Sigma ', 'Nothing'],
+        ['Now', 'Study', '', '', 'Drink']
+      ],
+      text = [
+        [' Wake up ',' Study ', ' Sleep ', 'Eat', 'Nap', 'Doom Scroll', 'Send Reels', 'Pass out'],
+        [''],
+        ['']
+      ];
+
+      function choice(array) {
+				return array[~~(Math.random() * array.length)];
+      }
+
+      function instruct() {
+        var headline = "", n, instructions = "",
+          head_div = document.getElementById("headline"),
+          inst_div = document.getElementById("instructions");
+        for (var i = 0 ; i < 4 ; i++) { headline += choice(title[i]); }
+        head_div.innerHTML = headline;
+        n = 2 + ~~(Math.random() * 8); // Between 2 and 10 instructions
+        for (var i = 0 ; i < n ; i++) {
+          instructions += "<li>";
+          for (var j = 0 ; j < 3 ; j++) { instructions += choice(text[j]); }
+          instructions += "</li>";
+        }
+        inst_div.innerHTML = instructions;
+      }
+
+      function go() {
+        instruct();
+        setInterval(instruct, 5000);
+      }
+      </script>
+
+</head>
+<body onload=go() style="font-size:3.2vh; margin:7vh; font-family:sans-serif">
+  <h1 style="color:blue ; text-align:center">Day in my life</h1>
+  <h2 style="color:rgb(28, 38, 28); text-align:center">in University</h2>
+  <h1 id=headline style="display:flex; justify-content:center"></h1>
+  <div style="display:flex; justify-content:center">
+  <ol id=instructions></ul>
+  </div>
+</body>
+</html>
