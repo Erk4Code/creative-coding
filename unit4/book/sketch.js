@@ -29,7 +29,7 @@ https://archive.org/stream/cotelnv/cote_1_djvu.txt
 let lines, fullText, mv,c,wc;
 
 function preload() {
-  lines = loadStrings("https://erk4code.github.io/creative-coding/week4/book/COTE.txt");
+  lines = loadStrings("https://erk4code.github.io/creative-coding/week4/book/text.txt");
 }
 
 function setup() {
