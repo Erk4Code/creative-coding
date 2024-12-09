@@ -2,22 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <!-- p5.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
 
-    <!-- include the Tracery library -->
-    <script src="https://cdn.jsdelivr.net/npm/tracery-grammar@2.7.4/tracery.min.js"></script>
+    <!-- including rita -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rita/2.8.31/rita.js" integrity="sha512-IGhGQtL9ApCRosCUaAuSlsUBrNeJpvviwzFyXvUFU/NpAudeKEvan5KIMC0QF3aT3Dp1/cGXHq936bpd8IVu7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <!-- include the Bindery library -->
-    <script src="https://unpkg.com/bindery@2.3.0/dist/bindery.min.js"></script>
+    <!-- include the Paged.js polyfill -->
+    <script defer src="https://unpkg.com/pagedjs/dist/paged.polyfill.js"></script>
+    <script>
+        // disable automatic rendering
+        window.PagedConfig = {auto: false};
+    </script>
+    
+    <!-- include the interface.css -->
+    <!-- this code will reference my copy, but you should use your own, ideally. -->
+    <link href="https://erk4code.github.io/creative-coding/unit4/book/interface.css" rel="stylesheet" type="text/css" />
 
-    <!-- RiTa library -->
-    <script src="https://unpkg.com/rita@2.8.31/dist/rita.js"></script>
 
 
     <title>Book</title> 
     <!--
-        Use this page to complete the "Book" project:
-        https://canvas.umw.edu/courses/1498218/assignments/11723294
+        This is an example of a book generated using a Markov chain algorithm.
     -->  
 
     <style type="text/css">
@@ -26,8 +32,6 @@
 
 </head>
 <body>
-    <main>
-    </main>
     <script src="sketch.js"></script>
 </body>
 </html> 
