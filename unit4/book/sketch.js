@@ -1,77 +1,113 @@
 /*
 
-This is a sketch offering a template for generating a book
-based on a Markov-chain analysis of some existing text. You 
-are welcome to use it. 
-
-Note: this is rather slow. It may take a few minutes to generate a book.
+This is a template that presents working code to generate
+a book using a Tracery grammar. You are welcome to use this 
+to make your own book!
 
 What I have done:
- - created the workflow 
- - set up options that usually produce a 50K book
+ - code the workflow
+ - create a basic grammar
+ - customize the Bindery options to make it look better
  
 What you need to do:
- - provide your own text file
- - adjust the options to make it work well
- - tweak the book presentation to make it look good
- - check the comments below for places where you can 
-   make adustments
+ - the grammar so it's actually interesting
+ - the #sentence# symbol has the most effect on the output
+ - #bookTitle# and #chapterTitle# do their own thing but
+   use the same format. You should change those to be more
+   interesting, too.
+   
+zw
    
 */
 
-/*
-I decided to use markov generation using the light novel called
-Classroom Of the Elite Vol 1-11.5
-Link to the book
-https://archive.org/stream/cotelnv/cote_1_djvu.txt
+// this is the main grammar. the first several symbols should
+// be relatively self-explanatory. The "loop" items near the 
+// end uses pseudo-recursion to generate lots of content.
 
-*/
-let lines, fullText, mv,c,wc;
+//created a book to be about a love story or try to be one
+let grammar = tracery.createGrammar({
+    bookTitle : "#nouns.capitalize# and #nouns.capitalize#",
+    chapterTitle : ["And So They #verb.s.capitalize# #nouns.capitalize#"],
+    sentence : "For a long time #names# #verb.s# with #names#. However, #names# does not have #nouns# for them",
+    nouns:["Affection",
+        "Devotion",
+        "Passion",
+        "Desire",
+        "Adoration",
+        "Heart",
+        "Bond"
+                    ],
+    names : ["Yuki",
+            "Takumi",
+            "Yui",
+            "Sasha",
+            "Ren",
+            "Rin",
+            "Mio"
+        ],
+    adj: ["passionate", 
+          "tender", 
+          "heartfelt", 
+          "poignant", 
+          "intense",
+          "bittersweet",
+          "dramatic"],
+    verb: ["long",
+        "promise",
+        "cherish",
+        "embrace",
+        "desire",
+        "shatter",
+        "pleads",
+        "struggle",
+        "reveal"
+    ],
+    verb2:["tries",
+        "goes",
+        "sees",
+        "gazes",
+        "smiles",
+        "whsipers",
+        "fights",
+        "dreams",
+    ],
 
-function preload() {
-  lines = loadStrings("https://erk4code.github.io/creative-coding/week4/book/text.txt");
-}
-
-function setup() {
-  noCanvas();
+    origin: "#chapterTitle#",
+    paragraph : "#addSentences#", 
+    addSentences : ["#sentenceLoop# #sentence#","#sentenceLoop# #sentence#","#sentenceLoop# #sentence#","#sentenceLoop# #sentence#","#sentenceLoop# #sentence#", "#sentence#"],
+    sentenceLoop : "#addSentences#",
+  });
   
-  // the base container for the book
-  let content = createElement("div");
-  content.attribute("id","content");
-
-  // build the markov model
-  // see options at: https://rednoise.org/rita/reference/RiTa/markov/index.html 
-  mv = RiTa.markov(2, {'disableInputChecks': true, 'temperature': 100, 'maxAttempts': 9999});
-  mv.addText(lines.join(" "));
+  // add some modifiers to help Tracery
+  grammar.addModifiers(tracery.baseEngModifiers);
   
-  // creates a title for the book by generating a sentence
-  content.child(createElement("h1", mv.generate(1)));
-  
-  
-  c = 1;
-  do {
+  function setup() {
+    noCanvas();
     
-    // create chapter titles from single sentences.
-    content.child( createElement("h2","Chapter " + c + ": " + mv.generate(1)));
-    let newText = "";
-    // use random() to specify the minimum and maximum
-    // paragraphs per chapter
-    for (let p = 0; p < random(12,60); p++ ){
-     
-      // generate a random number of sentences, using
-      // random() to dictate min and max sentences
-      let sentGen = mv.generate(floor(random(1,7)));
+    // create the HTML #content container
+    let content = createElement("div");
+    content.attribute("id","content");
+    
+    // add the book title
+    content.child(createElement("h1",grammar.flatten("#bookTitle#")))
+    
+    // chapter loop
+    let c = 1;
+    do {
       
-      let sentences = (typeof sentGen == 'object') ? sentGen.join(" ") : sentGen;
-            newText += "<p>" + sentences  + "</p>";   
-    }
-    content.child(createElement("div", newText));
+      // pick a chapter title
+      content.child(createElement("h2",  "Chapter " + c + ": " + grammar.flatten("#chapterTitle#")));
+      
+      // paragraph loop
+      let p = 0;
+      do {
+        content.child(createElement("p",grammar.flatten("#paragraph#")));
+        p++;
+      }while (p < random(40,130));
+      c++;
+    }while (c < 55);
    
-    c++;
+    // trigger the polyfill rendering
+    window.PagedPolyfill.preview();
+   
   }
-  while (c < 5); // the number of chapters to generate.
-    
-  // call the polyfill rendering
-  window.PagedPolyfill.preview();
-  
-}
