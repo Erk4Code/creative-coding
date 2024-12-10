@@ -1,5 +1,9 @@
 // new project idea I went with making things simple and decided to do a sort of rhythm game.
 // I hope the audio will work as it is my own music that I created
+// note audio does not work
+// Refernced this video for code https://www.youtube.com/watch?v=1Izg1eHFsUw
+
+//going to try and implement keys instead of mouse press
 
 let w = 0;
 let h = 0;
@@ -16,7 +20,7 @@ class Tile{ // title constructor to generate tiles on the scroller
     this.h = h/5;
     this.x = 10 + this.lane*w/4;
     this.y = -2*this.h;
-    this.speed = 15; // going to change speed to change with time
+    this.speed = 10; // going to change speed to change with time
   }
   show(){ // show to generate tile
     push();
@@ -48,18 +52,12 @@ class Tile{ // title constructor to generate tiles on the scroller
 
 tiles = []; // store tiles
 
-function preload(){
-  soundFormats('mp3','ogg');
-  song = loadSound("coolmusic.mp3");
-
-}
 
 function setup(){
   createCanvas(800,800);
   w = width;
   h = height;
   tiles.push(new Tile(int(random(4))))
-  song.play();
 }
 
 
